@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Race Championship</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Settings Overlay -->
+  <div class="overlay" id="overlay">
+    <div class="overlay-content">
+      <h1>Tic Race Championship 🏁</h1>
+      <label for="numTic">Number of Tics (1-100):</label>
+      <input type="number" id="numTic" min="1" max="100" value="5">
+      <label for="raceDuration">Race Duration (MM:SS):</label>
+      <input type="text" id="raceDuration" placeholder="MM:SS">
+      <div class="keypad">
+        <button class="keypad-btn" data-value="1">1</button>
+        <button class="keypad-btn" data-value="2">2</button>
+        <button class="keypad-btn" data-value="3">3</button>
+        <button class="keypad-btn" data-value="4">4</button>
+        <button class="keypad-btn" data-value="5">5</button>
+        <button class="keypad-btn" data-value="6">6</button>
+        <button class="keypad-btn" data-value="7">7</button>
+        <button class="keypad-btn" data-value="8">8</button>
+        <button class="keypad-btn" data-value="9">9</button>
+        <button class="keypad-btn" data-value="0">0</button>
+        <button id="clearBtn" class="keypad-btn">Clear</button>
+      </div>
+      <button id="startRace">Start Race</button>
+    </div>
+  </div>
+
+  <!-- Race Container -->
+  <div class="race-container">
+    <!-- Header Controls -->
+    <div class="race-header">
+      <button id="resetBtn">Reset</button>
+      <span id="timerDisplay">0</span>
+      <button id="fullscreenBtn">Fullscreen</button>
+    </div>
+    
+    <!-- Race Track -->
+    <div class="race-track" id="raceTrack"></div>
+  </div>
+
+  <!-- Results Overlay -->
+  <div class="results-overlay" id="resultsOverlay">
+    <div class="results-content">
+      <div class="podium">
+        <div class="second-place">
+          <img class="podium-img" src="" alt="2nd Place">
+        </div>
+        <div class="first-place">
+          <img class="podium-img" src="" alt="1st Place">
+        </div>
+        <div class="third-place">
+          <img class="podium-img" src="" alt="3rd Place">
+        </div>
+      </div>
+      <div class="leaderboard">
+        <h2>Final Standings</h2>
+        <table id="leaderboardTable">
+          <thead>
+            <tr>
+              <th>Position</th>
+              <th>Tic</th>
+              <th>Finish Time</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <button id="closeResults" class="results-close-btn">Close Results</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
